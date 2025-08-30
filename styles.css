@@ -1,0 +1,31 @@
+html, body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: #4caf50;
+}
+
+header {
+    padding: 8px;
+    color: white;
+    background-color: #4caf50;
+}
+
+footer {
+    padding: 8px;
+    color: white;
+    background-color: #2196f3;
+}
+
+.card-container.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-container.column {
+    flex-direction: column;
+}
+
+.card {
+    margin: 0 20px;
+    width: 210px;
+}
