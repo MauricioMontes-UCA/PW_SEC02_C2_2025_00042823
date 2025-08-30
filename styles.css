@@ -11,6 +11,8 @@ header {
 }
 
 footer {
+    display: flex;
+    justify-content: space-between;
     padding: 8px;
     color: white;
     background-color: #2196f3;
@@ -32,4 +34,12 @@ footer {
 
 .card.color-alt {
     color: red;
+}
+
+footer img {
+    display: none;
+}
+
+footer img.visible {
+    display: block;
 }

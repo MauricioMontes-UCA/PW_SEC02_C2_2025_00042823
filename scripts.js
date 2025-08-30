@@ -26,5 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
     }
+
+    const showImageButton = document.querySelector(".show-image")
+    const THE_GOAT = document.querySelector('footer img')
+
+    if (showImageButton && THE_GOAT) {
+        showImageButton.addEventListener('click', () => {
+            THE_GOAT.classList.toggle('visible')
+        })
+    }
 })
 
