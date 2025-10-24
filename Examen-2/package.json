@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/MauricioMontes-UCA/PW_SEC02_C2_2025_00042823#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   }
 }
