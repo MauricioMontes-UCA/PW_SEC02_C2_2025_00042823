@@ -1,6 +1,6 @@
 // Base de datos sencilla, ni siquiera es una base de datos sino que es una lista de cuentas
 
-const cuentas = [
+export const cuentas = [
   {
     "_id": "68fbcfb96df34c5b9161fb57",
     "isActive": true,

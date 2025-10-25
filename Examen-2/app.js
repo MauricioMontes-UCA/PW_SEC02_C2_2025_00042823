@@ -13,7 +13,7 @@ const PORT = 3130
 app.use(bodyParser.json())
 app.use(cors())
 
-app.use(router)
+app.use("/api", router)
 
 app.listen(PORT, () => {
     console.log(`Server running and listening in PORT: ${PORT}`)
