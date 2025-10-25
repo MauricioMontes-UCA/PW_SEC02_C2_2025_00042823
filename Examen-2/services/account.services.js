@@ -1,4 +1,4 @@
-import { cuentas } from "./database.js";
+import { cuentas } from "../db/database.js";
 
 // cuando es una base de datos, no es tan directo, pero xd
 export const getAll = () => {
@@ -20,7 +20,7 @@ export const getById = (id) => {
 export const getByName = (name) => {
     const account = cuentas.find(e => e.client === name);
     if (!account) {
-        return { "error": "No se encontró la cuenta con ese ID" }
+        return { "error": "No se encontró la cuenta con ese nombre" }
     }
     return account;
 }

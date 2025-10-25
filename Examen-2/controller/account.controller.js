@@ -1,4 +1,4 @@
-import { getAll, getById, getByName, getByGender } from "./account.services.js"
+import { getAll, getById, getByName, getByGender } from "../services/account.services.js"
 
 export const getAllAccounts = async (req, res) => {
     try {
@@ -29,8 +29,7 @@ export const getAccountByParam = async (req, res) => {
         }
 
         let data;
-        let found = false;
-        const { id, client, gender } = queries;
+        const { id, name, gender } = queries;
         
         if (id) {
             // Es exactamente el mismo procedimiento que la función
@@ -53,8 +52,8 @@ export const getAccountByParam = async (req, res) => {
             }
         }
 
-        if (client) {
-            data = getByName(client)
+        if (name) {
+            data = getByName(name)
             if (data.error) {
                 res.status(404).json({
                     "finded": false,
@@ -72,7 +71,7 @@ export const getAccountByParam = async (req, res) => {
         if (gender) {
             data = getByGender(gender)
 
-            if (data.error) {
+            if (data.length === 0) {
                 res.status(404).json({
                     "finded": false,
                     "account": data
@@ -92,29 +91,6 @@ export const getAccountByParam = async (req, res) => {
             }
         }
     } 
-    catch (e) {
-        res.status(500).json({ message: "Internal server error" })
-    }
-}
-
-export const getTotalBalance = async (req, res) => {
-    try {
-        const accounts = getAll();
-        let status = false;
-        let total = 0;
-
-        accounts.forEach((e) => {
-            if (e.isActive) {
-                status = true;
-                total += parseFloat(e.balance.replace(/[$,]/g, ""))
-            }
-        })
-
-        res.status(200).json({
-            "status": status,
-            "accountBalance": total
-        });
-    }
     catch (e) {
         res.status(500).json({ message: "Internal server error" })
     }
